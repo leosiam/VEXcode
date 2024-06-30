@@ -1,0 +1,34 @@
+โค้ดตัวอย่างใน VEXcode VR:
+
+# เริ่มต้นการเขียนโค้ด
+when started
+forever do
+  # ถ้าหุ่นยนต์ชนกำแพงด้านหน้า
+  if (FrontBumper.pressed()) then
+    # หยุดหุ่นยนต์
+    stop driving
+    # ตรวจสอบว่าด้านซ้ายมีกำแพงหรือไม่
+    if (LeftBumper.pressed()) then
+      # ถ้ามีกำแพงด้านซ้าย เลี้ยวขวา 90 องศา
+      turn right for 90 degrees
+    else
+      # ถ้าไม่มี เลี้ยวซ้าย 90 องศา
+      turn left for 90 degrees
+    end
+  else
+    # ถ้าไม่มีสิ่งกีดขวาง ให้เคลื่อนที่ไปข้างหน้า
+    drive forward
+  end
+end
+
+คำอธิบาย:
+
+when started: เริ่มต้นการทำงานของโค้ด
+forever do: วนลูปการทำงานนี้ตลอดเวลา
+if (FrontBumper.pressed()) then: ถ้าหุ่นยนต์ชนกำแพงด้านหน้า (ตรวจจับด้วยเซ็นเซอร์ FrontBumper)
+stop driving: หยุดการเคลื่อนที่ของหุ่นยนต์
+if (LeftBumper.pressed()) then: ถ้าหุ่นยนต์ชนกำแพงด้านซ้าย (ตรวจจับด้วยเซ็นเซอร์ LeftBumper)
+turn right for 90 degrees: ถ้ามีกำแพงด้านซ้าย เลี้ยวขวา 90 องศา
+turn left for 90 degrees: ถ้าไม่มี เลี้ยวซ้าย 90 องศา
+else: ถ้าไม่มีสิ่งกีดขวาง
+drive forward: ให้หุ่นยนต์เคลื่อนที่ไปข้างหน้า
